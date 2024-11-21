@@ -4,6 +4,8 @@ from wtforms import StringField,SubmitField,BooleanField
 from wtforms.validators import DataRequired
 
 # source virt/bin/activate
+# deactivate
+
 # export FLASK_APP=sample
 # export FLASK_DEBUG=1
 # flask run
