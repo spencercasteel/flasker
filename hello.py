@@ -1,7 +1,12 @@
 from flask import Flask, render_template
 from flask_wtf import FlaskForm
-from wtforms import StringField,SubmitField
+from wtforms import StringField,SubmitField,BooleanField
 from wtforms.validators import DataRequired
+
+# source virt/bin/activate
+# export FLASK_APP=sample
+# export FLASK_DEBUG=1
+# flask run
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'Password'
@@ -9,6 +14,7 @@ app.config['SECRET_KEY'] = 'Password'
 class NamerForm(FlaskForm):
     name = StringField("What's Your Name?", validators=[DataRequired()])
     submit = SubmitField('Submit')
+
 
 @app.route('/')
 def index():
