@@ -73,6 +73,7 @@ def delete(id):
 def update(id):
     form = UserForm()
     name_to_update = User.query.get_or_404(id)
+    our_users = User.query.order_by(User.date_added)
     if request.method == 'POST':
         name_to_update.name = request.form['name']
         name_to_update.email = request.form['email']
@@ -110,7 +111,7 @@ def add_user():
         form.name.data = ''
         form.email.data = ''
         form.favorite_color.data = ''
-        flash('user added successfully!')
+        flash('info has been added successfully')
     our_users = User.query.order_by(User.date_added)
     return render_template('add_user.html', 
             form=form,
